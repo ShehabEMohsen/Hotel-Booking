@@ -16,7 +16,7 @@ git clone https://github.com/ShehabEMohsen/task-website.git
 cd task-website
 ```
 
-### 1. Run the project
+### 2. Run the project
 ```bash
 npm run dev
 ```
