@@ -13,7 +13,7 @@ import './layout.css'
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="w-full flex items-center justify-between bg-transparent flex-col z-10 fixed top-0 left-0">
+    <nav className="w-full flex items-center justify-between bg-transparent flex-col z-50 fixed top-0 left-0">
       <div className="bg-[#1f8f69] py-4 w-full h-12 px-24 flex flex-row justify-between items-center">
         <div className="flex flex-row w-1/2 gap-4 items-center">
           <div className="text-white font-semibold flex flex-row items-center"><Image src={Dot} alt={""}/>7631 Sebina Park, 115 Devon Isle, USA</div>
