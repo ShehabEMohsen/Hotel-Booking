@@ -9,43 +9,93 @@ import './layout.css'
 import Flare from "../ui/Flare";
 
 const SecondSection: React.FC = () => (
-    <div className="h-screen flex justify-center items-center bg-[#e9efeb]">
-        <div className="w-1/3">
-            <Image src={Lounge} width={400} alt={""} className="rounded-2xl " />
-            {/* <div className="absolute right-1/2 -translate-x-1/2 w-24 h-24 bg-white border-4 border-gray-200 rounded-full flex flex-col items-center justify-center shadow-lg z-10">
-                <span className="text-[10px] text-gray-500 font-semibold uppercase text-center leading-tight">
-                30 YEARS OF EXPERIENCE <br />
-                <b className="font-bold">HOTEL BUSINESS</b>
-                </span>
-                <span className="stamp-icon">+</span>
-            </div> */}
-        </div>
-        <div className="w-1/3 gap-8 flex flex-col">
-            {/* <div className="bg-white w-32 px-1 py-1 rounded-sm text-[#1f8f69] font-bold text-sm text-center capitalize">About Fixyland</div> */}
-            <Flare text={"About Fixyland"}/>
-            <div className="flex flex-col gap-4">
-                <div className="text-4xl font-black">World Class Luxury Hotel and Resort Near City</div>
-                <div className="text-gray-600">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even</div>
-            </div>
-            <div className="grid grid-cols-2 grid-rows-3 justify-center items-center gap-4 text-gray-600">
-                <div className="flex"><Image src={Tick} alt={""} />24-Hours Emergency Service</div>
-                <div className="flex"><Image src={Tick} alt={""} />Comortable Atmosphere</div>
-                <div className="flex"><Image src={Tick} alt={""} />Something by accident</div>
-                <div className="flex"><Image src={Tick} alt={""} />It is a Long Established fact</div>
-                <div className="flex"><Image src={Tick} alt={""} />Flexible and Cost-Effective</div>
-                <div className="flex"><Image src={Tick} alt={""} />Get Free Consultation Anytime</div>
-            </div>
-            <div className="flex flex-row items-center gap-8">
-                <div className="w-18 h-18 relative">
-                    <Image src={Person} fill alt={""} className="rounded-full object-cover" />
-                </div>
-                <div>
-                    <div className="font-bold">Robert L. Robinson</div>
-                    <div className=" font-extralight text-gray-600">CEO & Founder</div>
+  <section className="py-16 md:py-24 lg:py-32 bg-[#e9efeb] overflow-hidden">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="flex flex-col lg:flex-row items-center gap-12 xl:gap-20">
+      <div className="w-full lg:w-1/2 xl:w-5/12 relative">
+        <div className="relative rounded-2xl overflow-hidden shadow-xl">
+            <Image 
+            src={Lounge} 
+            alt="Luxury hotel lounge area" 
+            width={600}
+            height={800}
+            className="w-full h-auto object-cover"
+            priority
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+            <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg hidden md:block">
+            <div className="text-center">
+                <div className="text-2xl font-bold text-[#1f8f69]">30+</div>
+                <div className="text-xs font-semibold text-gray-600 uppercase">
+                Years Experience
                 </div>
             </div>
+            </div>
         </div>
+        </div>
+        <div className="w-full lg:w-1/2 xl:w-2/5 mt-10 lg:mt-0">
+          <Flare text="About Fixyland" />
+          
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-6 mb-6 leading-tight">
+            World Class Luxury Hotel and Resort Near City
+          </h2>
+          
+          <p className="text-gray-600 text-lg mb-8">
+            There are many variations of passages of Lorem Ipsum available, but the majority have suffered 
+            alteration in some form, by injected humour, or randomised words which don't look even slightly 
+            believable.
+          </p>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+            {[
+              '24-Hours Emergency Service',
+              'Comfortable Atmosphere',
+              'Luxury Accommodation',
+              'Fine Dining Experience',
+              'Flexible and Cost-Effective',
+              'Free Consultation Anytime'
+            ].map((item, index) => (
+              <div key={index} className="flex items-start space-x-3">
+                <div className="flex-shrink-0 mt-1">
+                  <Image 
+                    src={Tick} 
+                    alt="" 
+                    width={20} 
+                    height={20} 
+                    className="text-[#1f8f69]"
+                  />
+                </div>
+                <span className="text-gray-700">{item}</span>
+              </div>
+            ))}
+          </div>
+          
+          <div className="flex items-center space-x-6 pt-4 border-t border-gray-200">
+            <div className="relative w-16 h-16 rounded-full overflow-hidden border-4 border-white shadow-lg">
+              <Image 
+                src={Person} 
+                alt="Robert L. Robinson" 
+                fill
+                className="object-cover"
+                sizes="64px"
+              />
+            </div>
+            <div>
+              <p className="font-bold text-lg">Robert L. Robinson</p>
+              <p className="text-gray-600">CEO & Founder</p>
+            </div>
+            <div className="hidden sm:block ml-auto">
+              <Button 
+                text="Contact Us" 
+                color="#e5c464" 
+                className="px-6 py-3 text-sm"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 );
 
 export default SecondSection;

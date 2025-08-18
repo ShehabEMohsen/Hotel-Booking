@@ -1,35 +1,83 @@
 import React from "react";
 import Button from "../ui/Button";
-import Lounge from "../../../public/images/Lounge.png"
-import Tick from "../../../public/icons/mdi_tick-circle.svg"
-import Person from "../../../public/images/person.png"
 import Image from "next/image";
+import Bike from "../../../public/icons/streamline-ultimate_fitness-bicycle-1.svg"
 
-import Bike from '../../../public/icons/streamline-ultimate_fitness-bicycle-1 2.svg'
-import './layout.css'
+// Icons
+// import FitnessIcon from '../../../public/icons/streamline-ultimate_fitness-bicycle-1 2.svg';
+// import RestaurantIcon from '../../../public/icons/restaurant-icon.svg';
+// import SpaIcon from '../../../public/icons/spa-icon.svg';
+// import PoolIcon from '../../../public/icons/pool-icon.svg';
+
+import './layout.css';
 import Flare from "../ui/Flare";
 import SquareTab from "../ui/SquareTab";
 
+const services = [
+  {
+    title: "Fitness Center",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis faucibus aliquet libero et maximus. ",
+    // icon: FitnessIcon
+  },
+  {
+    title: "Jacuzzi",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis faucibus aliquet libero et maximus. ",
+    // icon: RestaurantIcon
+  },
+  {
+    title: "Swimming Pool",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis faucibus aliquet libero et maximus. ",
+    // icon: SpaIcon
+  },
+  {
+    title: "SPA Treatments",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis faucibus aliquet libero et maximus. ",
+    // icon: SpaIcon
+  }
+];
+
 const FourthSection: React.FC = () => (
-    <div className="h-screen flex flex-row justify-around items-center bg-[#f8f8f6] gap-4">
-        <div className="w-1/3 flex flex-col gap-4">
-            <div>
-                <Flare text={"HOTEL SERVICES"}/>
-            </div>
-            <div className="font-bold text-6xl">Get The Best Hotel Fixyland Services</div>
-            <div className="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit blandit dui eu aliquet. Nunc molestie pharetra odio vel euismod. Morbi ut scelerisque lectus, quis porta nisi. Sed et orci.</div>
-            <div>
-                <Button text={"View All"} color={"#1e8f69"}/>
-            </div>
+  <section className="py-16 md:py-24 lg:py-32 bg-[#f8f8f6] relative overflow-hidden">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="flex flex-col lg:flex-row gap-12 xl:gap-20">
+        <div className="lg:w-2/5 xl:w-1/3">
+          <div className="mb-4">
+            <Flare text="HOTEL SERVICES" />
+          </div>
+          
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            Get The Best Hotel Fixyland Services
+          </h2>
+          
+          <p className="text-gray-600 text-lg mb-8">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis faucibus aliquet libero et maximus. Duis aliquet luctus lacus, et tincidunt dui laoreet ut. Fusce porttitor sollicitudin lectus, tempor feugiat dolor.
+          </p>
+          
+          <div className="w-full sm:w-auto">
+            <Button 
+              text="View All Services" 
+              color="#1f8f69"
+              className="px-8 py-3 text-base w-full sm:w-auto"
+            />
+          </div>
+
         </div>
-        <div className="w-1/2 gap-4 grid grid-cols-2 grid-rows-2">
-        {Array.from({length:4}).map((_,i)=>(
-            <SquareTab key={i} title={"Fitness Center"} 
-            desciprtion={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit blandit dui eu aliquet. Nunc molestie pharetra odio vel euismod."} 
-            icon={Bike}/>
-        ))}
+        
+        <div className="lg:w-3/5 xl:w-2/3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {services.map((service, index) => (
+              <SquareTab 
+                key={index}
+                title={service.title}
+                desciprtion={service.description}
+                icon={Bike}
+              />
+            ))}
+          </div>
         </div>
+      </div>
     </div>
+  </section>
 );
 
 export default FourthSection;

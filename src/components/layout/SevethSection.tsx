@@ -20,8 +20,8 @@ const SixthSection: React.FC = () => {
             Special Discount for Hotel & Resort Booking
         </div>
         <div className="w-full flex flex-row gap-4 justify-center pt-20 items-center">
-            <DiscountCard discount={"10%"} image={'/images/hotel.png'}/>
-            <DiscountCard discount={"10%"} image={'/images/hotel.png'}/>
+            <DiscountCard discount={"10%"} image={'/images/room.png'}/>
+            <DiscountCard discount={"10%"} image={'/images/room.png'}/>
         </div>
     </section>
   );
