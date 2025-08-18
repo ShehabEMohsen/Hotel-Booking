@@ -14,3 +14,9 @@ The project features a clean UI, responsive design, and reusable components for 
 ```bash
 git clone https://github.com/ShehabEMohsen/task-website.git
 cd task-website
+```
+
+### 1. Run the project
+```bash
+npm run dev
+```
