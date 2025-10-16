@@ -21,7 +21,9 @@ const TestimonalCard: React.FC<Props> = ({ testimonial, name, role }) => {
         ))}
       </div>
 
-      <div className="text-sm sm:text-base mb-4">"{testimonial}"</div>
+      <div className="text-sm sm:text-base mb-4">
+        `&apos;`{testimonial}`&apos;`
+      </div>
       <hr className="my-2" />
 
       <div className="flex flex-row gap-3 items-center mt-4">
